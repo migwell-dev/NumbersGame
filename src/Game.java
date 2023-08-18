@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Game {
     Scanner sc = new Scanner(System.in);
-    private int[] array;
-    private String name;
+    private final int[] array;
+    private final String name;
     private int spot;
     private int num;
 
@@ -76,6 +76,12 @@ public class Game {
                 break;
             }
         }
-        win();
+        for (int i : this.array) {
+            if (this.array[i] == 0) {
+                break;
+            } else {
+                win();
+            }
+        }
     }
 }
