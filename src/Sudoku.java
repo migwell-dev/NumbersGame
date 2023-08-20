@@ -38,11 +38,7 @@ public class Sudoku {
     }
 
     public boolean validSpot() {
-        if (this.board[this.row][this.col] == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.board[this.row][this.col] == 0;
     }
 
     public void placeNum() {
@@ -101,7 +97,7 @@ public class Sudoku {
     }
 
     public void checkWin() {
-        if (Arrays.equals(board, solution)) {
+        if (Arrays.deepEquals(board, solution)) {
             win();
         } else {
             lost();
