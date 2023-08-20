@@ -21,7 +21,7 @@ public class Game {
     }
 
     public boolean checkNums() {
-        for (int i = 0; i < this.array.length; i++) {
+        for (int i : this.array) {
             if (this.array[i] == this.num) {
                 return false;
             }
