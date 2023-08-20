@@ -2,16 +2,14 @@ import java.util.Scanner;
 public class Game {
     Scanner sc = new Scanner(System.in);
     private int[] array;
-    private final String name;
     private int spot;
     private int num = 0;
 
-    public Game(String playerName) {
+    public Game() {
         this.array = new int[10];
         for (int i : this.array) {
             array[i] = 0;
         }
-        this.name = playerName;
     }
 
     public void generateNum() {
@@ -75,7 +73,7 @@ public class Game {
 
     public void playGame() {
         System.out.println("The rules are simple: place the numbers in ascending order! Try not to misplace any...");
-        System.out.println("Game has started! Good luck, " + this.name);
+        System.out.println("Game has started! Good luck");
 
         for(int i = 0; i < this.array.length; i++) {
             generateNum();
