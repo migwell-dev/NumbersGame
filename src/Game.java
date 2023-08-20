@@ -16,7 +16,7 @@ public class Game {
 
     public void generateNum() {
         while (!checkNums()) {
-            this.num = (int) (Math.random() * 1000);
+            this.num = (int) (Math.random() * 11);
         }
     }
 
@@ -86,7 +86,9 @@ public class Game {
                 System.out.println("Game over!");
                 break;
             }
+            if (i == this.array.length-1) {
+                win();
+            }
         }
-        win();
     }
 }
