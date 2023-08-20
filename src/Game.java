@@ -15,7 +15,18 @@ public class Game {
     }
 
     public void generateNum() {
-        this.num = (int) (Math.random() * 1000);
+        while (!checkNums()) {
+            this.num = (int) (Math.random() * 1000);
+        }
+    }
+
+    public boolean checkNums() {
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i] == this.num) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void setSpot() {
@@ -76,11 +87,12 @@ public class Game {
                 break;
             }
         }
-        for (int i : this.array) {
+        for (int i = 0; i < this.array.length; i++) {
             if (this.array[i] == 0) {
                 break;
             } else {
                 win();
+                break;
             }
         }
     }
