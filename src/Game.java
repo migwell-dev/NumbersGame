@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class Game {
     Scanner sc = new Scanner(System.in);
-    private final int[] array;
+    private int[] array;
     private final String name;
     private int spot;
-    private int num;
+    private int num = 0;
 
     public Game(String playerName) {
         this.array = new int[10];
@@ -21,7 +21,7 @@ public class Game {
     }
 
     public boolean checkNums() {
-        for (int i : this.array) {
+        for (int i = 0; i < this.array.length; i++) {
             if (this.array[i] == this.num) {
                 return false;
             }
@@ -87,13 +87,6 @@ public class Game {
                 break;
             }
         }
-        for (int i = 0; i < this.array.length; i++) {
-            if (this.array[i] == 0) {
-                break;
-            } else {
-                win();
-                break;
-            }
-        }
+        win();
     }
 }
